@@ -1,0 +1,60 @@
+package a;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class NhanVien implements Comparable<NhanVien>{
+
+    private String id, name, gt;
+    private Date ngaysinh;
+    private String diachi, mst, ngayki;
+   
+
+    public NhanVien() {
+    }
+
+    public NhanVien(String id, String name, String gt, Date ngaysinh, String diachi, String mst, String ngayki) {
+        this.id = id;
+        this.name = name;
+        this.gt = gt;
+        this.ngaysinh = ngaysinh;
+        this.diachi = diachi;
+        this.mst = mst;
+        this.ngayki = ngayki;
+    }
+
+    
+    
+    @Override
+    public String toString(){
+        return id + " " + name + " " + gt + " " + new SimpleDateFormat("dd/MM/yyyy").format(ngaysinh) + " " + diachi + " " + mst + " " + ngayki;
+        
+    }
+    
+    @Override
+    public int compareTo(NhanVien o) {
+        if(o.ngaysinh.after(this.ngaysinh) == false) return 1;
+        return -1;
+    }
+    
+    
+}
+//3
+//Nguyen Van A
+//Nam
+//22/10/1982
+//Mo Lao-Ha Dong-Ha Noi
+//8333012345
+//31/12/2013
+//Ly Thi B
+//Nu
+//15/10/1988
+//Mo Lao-Ha Dong-Ha Noi
+//8333012346
+//22/08/2011
+//Hoang Thi C
+//Nu
+//04/02/1981
+//Mo Lao-Ha Dong-Ha Noi
+//8333012347
+//22/08/2011
